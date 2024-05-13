@@ -1,0 +1,41 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../bgg.png");
+    background-color: rgba(255, 255, 255, 0.448); /* Adjust the alpha value (0.5) as needed */
+}
+
+
+.home-content {
+    display: flex;
+    width: 80%; 
+}
+
+.heading {
+    flex: 1;
+    padding: 80px;
+    color: #131313; 
+    background-color: #ebebeb00; 
+}
+
+.heading h2 {
+    font-size: 75px; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.heading p {
+    font-size: 30px;
+    font-family: cursive;
+}
+
+.image {
+    flex: 1;
+    padding: 20px;
+}
+
+.image img {
+    width: 90%;
+    height: auto;
+}

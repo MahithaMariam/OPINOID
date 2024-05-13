@@ -1,0 +1,46 @@
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Adjust background color as needed */
+}
+
+.about-content {
+    display: flex;
+    width: 80%; /* Adjust width as needed */
+}
+
+.about-heading {
+    flex: 1; /* Take up remaining space */
+    padding: 40px;
+    color: #c30c0c; /* Font color */
+    text-align: center; /* Center align heading */
+    font-family: 'Your Custom Font', outline; /* Replace 'Your Custom Font' with the name of your custom font */
+}
+
+.about-heading h2 {
+    font-size: 60px; /* Adjust font size as needed */
+}
+
+.about-paragraph {
+    flex: 1; /* Take up remaining space */
+    padding: 20px;
+}
+
+.about-paragraph p {
+    font-size: 20px; /* Adjust font size as needed */
+    line-height: 1.5; 
+    color: #040d46;/* Adjust line height as needed */
+    font-family: 'Your Custom Font', sans-serif; /* Replace 'Your Custom Font' with the name of your custom font */
+}
+.about-image {
+    flex: 1; /* Take up remaining space */
+    padding: 20px;
+}
+
+.about-image img {
+    max-width: 100%; /* Set maximum width to 100% of its container */
+    max-height: 100%; /* Set maximum height to 100% of its container */
+    object-fit: contain; /* Maintain aspect ratio and fit image within its container */
+}

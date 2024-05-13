@@ -1,0 +1,54 @@
+/* Analyser.css */
+
+/* Background Image: This is the background image for the analyser container */
+.analyser-container {
+    background-image: url("../bg1.png");
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #9aafc6;
+    background-size: cover;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    background-color: rgba(235, 235, 235, 0.077); /* Semi-transparent white background for form */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 50px; /* Increase font size */
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button {
+    background-color: #23292ec2; /* Blue button color */
+    color: #fff; /* White text color */
+    padding: 15px 30px; /* Increase padding to increase button size */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px; /* Increase font size */
+    align-self: center; /* Center button horizontally */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
