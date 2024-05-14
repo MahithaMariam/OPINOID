@@ -1,13 +1,13 @@
 // AboutUs.jsx
 import React from 'react';
 import './styles/AboutUs.css';
-import aboutImage from '../images/iimm.png'; // Import the image here
+import aboutImage from './iimm.png'; // Import the image here
 
 
 const AboutUs = () => {
     return (
         <div>
-        <div className="about-container"> 
+        <div className="about-container" id="AboutUs"> 
             <div className="about-content">
                 <div className="about-image">
                     <img src={aboutImage} alt="About Us" />

@@ -34,13 +34,3 @@
     color: #040d46;/* Adjust line height as needed */
     font-family: 'Your Custom Font', sans-serif; /* Replace 'Your Custom Font' with the name of your custom font */
 }
-.about-image {
-    flex: 1; /* Take up remaining space */
-    padding: 20px;
-}
-
-.about-image img {
-    max-width: 100%; /* Set maximum width to 100% of its container */
-    max-height: 100%; /* Set maximum height to 100% of its container */
-    object-fit: contain; /* Maintain aspect ratio and fit image within its container */
-}

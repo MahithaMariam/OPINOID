@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 const Navbar = () => {
@@ -14,6 +14,18 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
+  // Function to scroll to the About Us section
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about-container");
+    aboutSection.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Function to scroll to the Comment Analysis section
+  const scrollToAnalyser = () => {
+    const analyserSection = document.getElementById("analyser-container");
+    analyserSection.scrollIntoView({ behavior: "smooth" });
+};
+
   return (
     <nav className="navbar">
       <Link to="/" className="title" onClick={closeMenu}>
@@ -26,23 +38,15 @@ const Navbar = () => {
       </div>
       <ul className={menuOpen ? "open" : ""}>
         <li>
-          <NavLink to="/" activeClassName="active" onClick={closeMenu}>
+          <Link to="/" onClick={closeMenu}>
             Home
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink to="/about" activeClassName="active" onClick={closeMenu}>
-            About Us
-          </NavLink>
+          <button onClick={scrollToAbout}>About Us</button>
         </li>
         <li>
-          <NavLink
-            to="/analyser"
-            activeClassName="active"
-            onClick={closeMenu}
-          >
-            Comment Analysis
-          </NavLink>
+          <button onClick={scrollToAnalyser}>Comment Analysis</button>
         </li>
       </ul>
     </nav>
@@ -50,4 +54,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

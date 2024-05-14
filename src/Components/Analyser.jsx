@@ -16,7 +16,6 @@ const Analyser = () => {
 
     return (
         <div>
-           
             <div className="analyser-container">
                 <div className="form-container">
                     <div className="field">

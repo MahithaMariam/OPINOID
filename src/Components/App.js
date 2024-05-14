@@ -9,13 +9,13 @@ const App = () => {
   return (
     <Router>
       <Navbar /> {/* Render Navbar component */}
-      <div className="container">
+      
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/analyser" element={<Analyser />} />
         </Routes>
-      </div>
+      
     </Router>
   );
 };
