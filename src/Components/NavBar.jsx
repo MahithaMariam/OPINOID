@@ -9,22 +9,21 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // Function to close the menu
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
-  // Function to scroll to the About Us section
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about-container");
     aboutSection.scrollIntoView({ behavior: "smooth" });
+    closeMenu();
   };
 
-  // Function to scroll to the Comment Analysis section
   const scrollToAnalyser = () => {
     const analyserSection = document.getElementById("analyser-container");
     analyserSection.scrollIntoView({ behavior: "smooth" });
-};
+    closeMenu();
+  };
 
   return (
     <nav className="navbar">
@@ -47,6 +46,11 @@ const Navbar = () => {
         </li>
         <li>
           <button onClick={scrollToAnalyser}>Comment Analysis</button>
+        </li>
+        <li>
+          <Link to="/login" onClick={closeMenu}>
+            Login
+          </Link>
         </li>
       </ul>
     </nav>

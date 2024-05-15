@@ -1,56 +1,69 @@
 .navbar {
-    background-color: #0f172a;
-    color: rgb(34, 29, 29);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    width: 100%;
-    z-index: 1000;
-    position: sticky; /* Make navbar stick to the top */
-    top: 0; /* Position at the top */
-}
-
-.navbar .title {
-    font-size: 1.5rem;
-    margin-right: auto;
-    margin-left: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    color: rgb(232, 224, 237);
-}
-
-.navbar ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar ul li {
-    margin-right: 10px;
-}
-
-.navbar ul li a {
-    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #333;
+  }
+  
+  .title {
     color: white;
-}
-
-.navbar ul li a.active {
-    background-color: #1d4ed8;
-}
-
-.navbar ul.open {
-    display: flex;
+    text-decoration: none;
+    font-size: 24px;
+  }
+  
+  .menu {
+    display: none;
     flex-direction: column;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: #ccd7f1;
-}
-
-.navbar ul.open li {
-    width: 100%;
-    text-align: center;
-    margin: 5px 0;
-}
+    cursor: pointer;
+  }
+  
+  .menu span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+  }
+  
+  ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  ul li {
+    margin: 0 10px;
+  }
+  
+  ul li a, ul li button {
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  ul.open {
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .menu {
+      display: flex;
+    }
+  
+    ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    ul.open {
+      display: flex;
+    }
+  
+    ul li {
+      margin: 10px 0;
+      text-align: center;
+    }
+  }
+  
