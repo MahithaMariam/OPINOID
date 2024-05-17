@@ -38,18 +38,18 @@ const Navbar = () => {
       <ul className={menuOpen ? "open" : ""}>
         <li>
           <Link to="/" onClick={closeMenu}>
-            Home
+            <button type="button">Home</button>
           </Link>
         </li>
         <li>
-          <button onClick={scrollToAbout}>About Us</button>
+          <button type="button" onClick={scrollToAbout}>About Us</button>
         </li>
         <li>
-          <button onClick={scrollToAnalyser}>Comment Analysis</button>
+          <button type="button" onClick={scrollToAnalyser}>Comment Analysis</button>
         </li>
         <li>
           <Link to="/login" onClick={closeMenu}>
-            Login
+            <button type="button">Login</button>
           </Link>
         </li>
       </ul>

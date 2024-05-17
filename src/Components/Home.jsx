@@ -1,6 +1,7 @@
+// eslint-disable-next-line
 import React, { useState, useRef, useEffect } from 'react';
 import './styles/Home.css';
-import aboutImage from './iimm.png'; // Ensure the correct path to the image
+import aboutImage from './iq.png'; // Ensure the correct path to the image
 import Footer from './Footer';
 
 const Home = () => {

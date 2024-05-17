@@ -3,34 +3,39 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
-    background-image: url("../bgg.png");
-    background-color: rgba(255, 255, 255, 0.448); /* Adjust the alpha value (0.5) as needed */
+    height: 90vh;
+    background-color: rgba(192, 223, 255, 0.907); /* Adjust the alpha value (0.5) as needed */
+    /*background-image: url("../image.png"); /* Set the background image here */
+    background-size: cover; /* Adjust background size as needed */
+    background-position: flex; /* Adjust background position as needed */
 }
-.page{
+
+.page {
     width: 100%;
 }
 
 .home-content {
     display: flex;
-    width: 80%; 
+    width: 80%;
 }
 
 .heading {
     flex: 1;
     padding: 80px;
-    color: #131313; 
-    background-color: #ebebeb00; 
+    color: #131313;
+    background-color: #ebebeb00;
 }
 
 .heading h2 {
-    font-size: 75px; 
+    font-size: 75px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold; /* Added bold font */
 }
 
 .heading p {
     font-size: 30px;
     font-family: cursive;
+    font-style: italic; /* Added italics */
 }
 
 .image {
@@ -39,6 +44,6 @@
 }
 
 .image img {
-    width: 90%;
+    max-width: 10%; /* Set maximum width to 100% */
     height: auto;
 }
