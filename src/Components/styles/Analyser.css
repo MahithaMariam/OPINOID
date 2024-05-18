@@ -65,11 +65,13 @@
 
 .comments-container {
     display: flex;
-    gap: 20px;
+   
     max-height: calc(90vh - 200px);
-    justify-content: space-between;
+    justify-content: space-around;
     
 }
+
+
 
 
 
@@ -82,7 +84,7 @@
 .cmt{
     max-height: calc(92vh - 300px);
     overflow: auto;
-    width: 50vw;
+    width: 40vw;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -99,7 +101,7 @@
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 20px;
-    width: 50%;
+    width: 70%;
     background-color: #32ee61;
 }
 
@@ -107,6 +109,12 @@
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 20px;
-    width: 50%;
+    width: 70%;
     background-color: #d8313f;
 }
+
+.pie-chart-container h3{
+  margin-top: 20px;
+}
+
+  
