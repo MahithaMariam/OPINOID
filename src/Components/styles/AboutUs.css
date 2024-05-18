@@ -2,11 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 93vh;
     background-color: #f6fdff; /* Adjust background color as needed */
 }
 
 .about-content {
+    padding-top: 50px;
     display: flex;
     width: 80%; /* Adjust width as needed */
 }
