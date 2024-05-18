@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { SentimentIntensityAnalyzer } from "vader-sentiment";
-
 import "./styles/Analyser.css";
+
 
 const Analyser = () => {
   const [url, setUrl] = useState("");
@@ -23,7 +23,7 @@ const Analyser = () => {
 
       do {
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=AIzaSyAWltV2rXkXuy7zbjymBioVXks9zKaR82w${
+          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${process.env.YT_KEY}${
             nextPageToken ? `&pageToken=${nextPageToken}` : ""
           }`
         );
@@ -93,21 +93,38 @@ const Analyser = () => {
           <p>Average sentiment score: {sentimentResult.toFixed(2)}</p>
         </div>
       )}
-      <div className="comments-container">
-        <div>
-          <h3>Positive Comments</h3>
-          {positiveComments.map((comment, index) => (
-            <li key={index}>{comment}</li>
-          ))}
+      {comments.length > 0 && (
+        <div className="comments-container">
+          <div>
+            <h3>Positive Comments</h3>
+            <div className="cmt">
+              {positiveComments.length > 0 ? (
+                positiveComments.map((comment, index) => (
+                  <div className="positive-cmt" key={index}>
+                    {comment}
+                  </div>
+                ))
+              ) : (
+                <p>No positive comments</p>
+              )}
+            </div>
+          </div>
+          <div>
+            <h3>Negative Comments</h3>
+          <div className="cmt">
+            {negativeComments.length > 0 ? (
+              negativeComments.map((comment, index) => (
+                <div className="negative-cmt" key={index}>
+                  {comment}
+                </div>
+              ))
+            ) : (
+              <p>No negative comments</p>
+            )}
+          </div>
+          </div>
         </div>
-        <div>
-          <h3>Negative Comments</h3>
-
-          {negativeComments.map((comment, index) => (
-            <li key={index}>{comment}</li>
-          ))}
-        </div>
-      </div>
+      )}
     </div>
   );
 };

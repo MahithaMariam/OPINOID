@@ -75,12 +75,47 @@
 .comments-container {
     display: flex;
     gap: 20px;
-
-
-
+    max-height: calc(90vh - 200px);
+    justify-content: space-between;
 }
+
+
 
 .comments-container h3 {
     display: flex;
     justify-content: center;
+    
+   
+}
+.cmt{
+    max-height: calc(90vh - 290px);
+    overflow: auto;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cmt p {
+    height: max-content;
+    background-color: #3783d5;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.positive-cmt{
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    width: 50%;
+    background-color: #32ee61;
+}
+
+.negative-cmt{
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    width: 50%;
+    background-color: #32ee61;
 }
