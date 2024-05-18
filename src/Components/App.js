@@ -6,7 +6,7 @@ import AboutUs from './AboutUs';
 import Analyser from './Analyser';
 import Navbar from './NavBar'; // Import Navbar component
 import LoginRegister from './LoginRegister'; // Import LoginRegister component
-import QueryIdentification from './Queries';
+import QueryIdentification from './QueryIdentification';
 import "./App.css"
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/analyser" element={<Analyser />} />
-        <Route path="/queries" element={< QueryIdentification/>} />
+        <Route path="/QueryIdentification" element={< QueryIdentification/>} />
 
         <Route path="/login" element={<LoginRegister />} /> {/* Add LoginRegister route */}
       </Routes>

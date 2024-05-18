@@ -1,6 +1,6 @@
-
 import React, { useState } from "react";
 import axios from "axios";
+import "./QueryIdentification.css"; // Import the CSS file here
 
 const QueryIdentification = () => {
   const [url, setUrl] = useState("");
@@ -62,15 +62,17 @@ const QueryIdentification = () => {
 
   return (
     <div>
-      <div>
-        <label>Please enter your YouTube URL here:</label>
+      <div className="container1">
+        
+        
+        <h1><label>Please enter your YouTube URL here:</label></h1>
         <input
           type="text"
           value={url}
           onChange={handleInputChange}
           disabled={loading}
         />
-        <button onClick={handleAnalyseClick} disabled={loading}>
+        <button className="button" onClick={handleAnalyseClick} disabled={loading}>
           {loading ? "Loading..." : "Analyse"}
         </button>
       </div>

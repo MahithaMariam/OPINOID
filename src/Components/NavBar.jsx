@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import QueryIdentification from "./Queries";
+import QueryIdentification from "./QueryIdentification";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -54,7 +54,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/queries" onClick={<QueryIdentification/>}>
+          <Link to="/QueryIdentification" onClick={<QueryIdentification/>}>
             <button type="button">Queries</button>
           </Link>
         </li>
