@@ -3,11 +3,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #b1cce0;
   }
   
   .title {
-    color: white;
+    color: rgb(16, 16, 16);
     text-decoration: none;
     font-size: 24px;
   }
@@ -21,7 +21,7 @@
   .menu span {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: rgb(229, 92, 92);
     margin: 4px 0;
   }
   
@@ -35,7 +35,7 @@
   }
   
   ul li a, ul li button {
-    color: white;
+    color: rgb(16, 15, 15);
     text-decoration: none;
     background: none;
     border: none;

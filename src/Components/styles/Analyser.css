@@ -2,15 +2,16 @@
 
 /* Background Image: This is the background image for the analyser container */
 .analyser-container {
-    background-image: url("../bg1.png");
+    background-image: url("../im1.png");
     display: flex;
     flex-direction: column; /* Align items vertically */
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #9aafc6;
+    background-color: rgba(154, 175, 198, 0); /* Adjust the alpha value (0.5) for transparency */
     background-size: cover;
 }
+
 
 .form-container {
     display: flex;
@@ -26,7 +27,7 @@
 
 .label {
     font-weight: bold;
-    font-size: 50px; /* Increase font size */
+    font-size: 35px; /* Increase font size */
 }
 
 .input {
@@ -39,16 +40,21 @@
 
 .button {
     background-color: #23292ec2; /* Blue button color */
-    color: #fff; /* White text color */
-    padding: 15px 30px; /* Increase padding to increase button size */
+    color: #dee0f8; /* White text color */
+    padding: 5px; /* Keep the padding consistent */
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 20px; /* Increase font size */
+    font-size: 20px; /* Keep the font size consistent */
+    width: 50%; /* Adjust the width of the button to be half the width of the input box */
+    margin-top: 10px; /* Add some space between the input box and the button */
     align-self: center; /* Center button horizontally */
 }
 
+
+
 .button:hover {
-    background-color: #0056b3; /* Darker blue color on hover */
+    background-color: #3783d5; /* Darker blue color on hover */
+    padding: 8px; /* Adjust the padding to reduce the hover effect length */
 }
 
