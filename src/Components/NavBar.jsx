@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./NavBar.css";
+import "./styles/NavBar.css";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "./firebase"; // Make sure the path is correct
 import QueryIdentification from "./Queries";
+import { LogIn } from "lucide-react";
+import Analyser from "./Analyser";
+import AboutUs from "./AboutUs";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -14,16 +27,14 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById("about-container");
-    aboutSection.scrollIntoView({ behavior: "smooth" });
-    closeMenu();
-  };
-
-  const scrollToAnalyser = () => {
-    const analyserSection = document.getElementById("analyser-container");
-    analyserSection.scrollIntoView({ behavior: "smooth" });
-    closeMenu();
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("Sign-out successful");
+      })
+      .catch((error) => {
+        console.error("Sign-out error", error);
+      });
   };
 
   return (
@@ -43,21 +54,32 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <button type="button" onClick={scrollToAbout}>About Us</button>
-        </li>
-        <li>
-          <button type="button" onClick={scrollToAnalyser}>Comment Analysis</button>
-        </li>
-        <li>
-          <Link to="/login" onClick={closeMenu}>
-            <button type="button">Login</button>
+          <Link to="/about" path={<AboutUs />}>
+            <button type="button">About Us</button>
           </Link>
         </li>
         <li>
-          <Link to="/queries" onClick={<QueryIdentification/>}>
+          <Link to="/analyser" path={<Analyser />}>
+            <button type="button">Comment Analysis</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/queries" path={<QueryIdentification />}>
             <button type="button">Queries</button>
           </Link>
         </li>
+        <li>
+          {user ? (
+            <button type="button" onClick={handleSignOut}>
+              Sign Out
+            </button>
+          ) : (
+            <Link to="/login" path={<LogIn />}>
+              <button type="button">Login</button>
+            </Link>
+          )}
+        </li>
+       
       </ul>
     </nav>
   );
