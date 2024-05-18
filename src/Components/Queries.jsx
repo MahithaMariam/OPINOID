@@ -19,9 +19,9 @@ const QueryIdentification = () => {
 
       do {
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=AIzaSyAWltV2rXkXuy7zbjymBioVXks9zKaR82w${
-            nextPageToken ? `&pageToken=${nextPageToken}` : ""
-          }`
+          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${
+            process.env.REACT_APP_YOUTUBE_API_KEY
+          }${nextPageToken ? `&pageToken=${nextPageToken}` : ""}`
         );
         const fetchedComments = response.data.items.map(
           (item) => item.snippet.topLevelComment.snippet.textDisplay
@@ -87,11 +87,16 @@ const QueryIdentification = () => {
         </button>
       </div>
       <div className="queries-comments">
-        <h2>Queries</h2>
-
-        {queries.map((query, index) => (
-          <li key={index}>{query}</li>
-        ))}
+        <div>
+          <h2>Queries</h2>
+          <div className="query-cmt">
+            {queries.map((query, index) => (
+              <div className="query-cmts" key={index}>
+                {query}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

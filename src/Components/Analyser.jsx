@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { SentimentIntensityAnalyzer } from "vader-sentiment";
-
+import Sentiment from "sentiment";
+import { Pie } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import "./styles/Analyser.css";
+
+// Register Chart.js elements
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Analyser = () => {
   const [url, setUrl] = useState("");
@@ -23,7 +32,7 @@ const Analyser = () => {
 
       do {
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=AIzaSyAWltV2rXkXuy7zbjymBioVXks9zKaR82w${
+          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}${
             nextPageToken ? `&pageToken=${nextPageToken}` : ""
           }`
         );
@@ -49,13 +58,13 @@ const Analyser = () => {
   };
 
   const analyzeComments = (comments) => {
-    const analyzer = new SentimentIntensityAnalyzer();
+    const sentiment = new Sentiment();
     let totalScore = 0;
     let positive = [];
     let negative = [];
     comments.forEach((comment) => {
-      const score =
-        SentimentIntensityAnalyzer.polarity_scores(comment).compound;
+      const result = sentiment.analyze(comment);
+      const score = result.comparative;
       totalScore += score;
       if (score >= 0) {
         positive.push(comment);
@@ -67,6 +76,16 @@ const Analyser = () => {
     setSentimentResult(averageScore);
     setPositiveComments(positive);
     setNegativeComments(negative);
+  };
+
+  const data = {
+    labels: ["Positive Comments", "Negative Comments"],
+    datasets: [
+      {
+        data: [positiveComments.length, negativeComments.length],
+        backgroundColor: ["#36A2EB", "#FF6384"],
+      },
+    ],
   };
 
   return (
@@ -93,21 +112,44 @@ const Analyser = () => {
           <p>Average sentiment score: {sentimentResult.toFixed(2)}</p>
         </div>
       )}
-      <div className="comments-container">
-        <div>
-          <h3>Positive Comments</h3>
-          {positiveComments.map((comment, index) => (
-            <li key={index}>{comment}</li>
-          ))}
-        </div>
-        <div>
-          <h3>Negative Comments</h3>
+      {comments.length > 0 && (
+        <div className="comments-container">
+          <div>
+            <h3>Positive Comments {positiveComments.length}</h3>
+            <div className="cmt">
+              {positiveComments.length > 0 ? (
+                positiveComments.map((comment, index) => (
+                  <div className="positive-cmt" key={index}>
+                    {comment}
+                  </div>
+                ))
+              ) : (
+                <p>No positive comments</p>
+              )}
+            </div>
+          </div>
+          <div className="pie-chart-container">
+            <h3>Comments Sentiment Distribution</h3>
+            <Pie data={data} />
+          </div>
+          <div>
+            <h3>Negative Comments {negativeComments.length}</h3>
+            <div className="cmt">
+              {negativeComments.length > 0 ? (
+                negativeComments.map((comment, index) => (
+                  <div className="negative-cmt" key={index}>
+                    {comment}
+                  </div>
+                ))
+              ) : (
+                <p>No negative comments</p>
+              )}
+            </div>
+          </div>
 
-          {negativeComments.map((comment, index) => (
-            <li key={index}>{comment}</li>
-          ))}
         </div>
-      </div>
+      )}
+      
     </div>
   );
 };

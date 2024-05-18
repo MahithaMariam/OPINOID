@@ -64,6 +64,11 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
+          <Link to="/queries" path={<QueryIdentification />}>
+            <button type="button">Queries</button>
+          </Link>
+        </li>
+        <li>
           {user ? (
             <button type="button" onClick={handleSignOut}>
               Sign Out
@@ -74,11 +79,7 @@ const Navbar = () => {
             </Link>
           )}
         </li>
-        <li>
-          <Link to="/queries" path={<QueryIdentification />}>
-            <button type="button">Queries</button>
-          </Link>
-        </li>
+       
       </ul>
     </nav>
   );
