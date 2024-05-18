@@ -1,7 +1,4 @@
-/* Analyser.css */
-
-/* Background Image: This is the background image for the analyser container */
-.analyser-container {
+.queries-container {
     background-image: url("../im1.png");
     display: flex;
     flex-direction: column;
@@ -12,9 +9,7 @@
     min-height: 93vh;
 }
 
-
-
-.form-container {
+.queries-form-container {
     display: flex;
     flex-direction: column;
     /* Align items vertically */
@@ -29,11 +24,6 @@
     margin-bottom: 20px;
 }
 
-.label {
-    font-weight: bold;
-    font-size: 35px;
-    /* Increase font size */
-}
 
 .input {
     width: 100%;
@@ -57,7 +47,7 @@
     /* Keep the font size consistent */
     width: 50%;
     /* Adjust the width of the button to be half the width of the input box */
-    margin-top: 10px;
+
     /* Add some space between the input box and the button */
     align-self: center;
     /* Center button horizontally */
@@ -72,15 +62,12 @@
     /* Adjust the padding to reduce the hover effect length */
 }
 
-.comments-container {
+.queries-comments{
     display: flex;
-    gap: 20px;
-
-
-
+    flex-direction: column;
+    padding: 20px;
 }
-
-.comments-container h3 {
-    display: flex;
-    justify-content: center;
+.queries-comments h2{
+   display: flex;
+   justify-content: center;
 }

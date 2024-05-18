@@ -1,7 +1,6 @@
-
 import React, { useState } from "react";
 import axios from "axios";
-
+import "./styles/Queries.css";
 const QueryIdentification = () => {
   const [url, setUrl] = useState("");
   const [queries, setQueries] = useState([]);
@@ -20,7 +19,9 @@ const QueryIdentification = () => {
 
       do {
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=AIzaSyAWltV2rXkXuy7zbjymBioVXks9zKaR82w${nextPageToken ? `&pageToken=${nextPageToken}` : ""}`
+          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=AIzaSyAWltV2rXkXuy7zbjymBioVXks9zKaR82w${
+            nextPageToken ? `&pageToken=${nextPageToken}` : ""
+          }`
         );
         const fetchedComments = response.data.items.map(
           (item) => item.snippet.topLevelComment.snippet.textDisplay
@@ -38,7 +39,8 @@ const QueryIdentification = () => {
   };
 
   const extractVideoId = (videoUrl) => {
-    const regExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const regExp =
+      /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
     const match = videoUrl.match(regExp);
     return match && match[1] ? match[1] : "";
   };
@@ -46,10 +48,13 @@ const QueryIdentification = () => {
   const generateQueries = (comments) => {
     const queries = comments.filter((comment) => {
       // Check if the comment ends with a question mark
-      const endsWithQuestionMark = comment.trim().charAt(comment.trim().length - 1) === "?";
+      const endsWithQuestionMark =
+        comment.trim().charAt(comment.trim().length - 1) === "?";
 
       // Check for Wh-words at the beginning of the sentence
-      const hasWhWordsAtStart = /^(who|what|where|when|why|which|how)\b/i.test(comment.trim());
+      const hasWhWordsAtStart = /^(who|what|where|when|why|which|how)\b/i.test(
+        comment.trim()
+      );
 
       // Check for question marks within the comment
       const hasQuestionMarks = comment.includes("?");
@@ -61,26 +66,32 @@ const QueryIdentification = () => {
   };
 
   return (
-    <div>
-      <div>
-        <label>Please enter your YouTube URL here:</label>
-        <input
-          type="text"
-          value={url}
-          onChange={handleInputChange}
+    <div className="queries-container">
+      <div className="queries-form-container">
+        <div className="field">
+          <label className="label">Please enter your YouTube URL here:</label>
+          <input
+            type="text"
+            className="input"
+            value={url}
+            onChange={handleInputChange}
+            disabled={loading}
+          />
+        </div>
+        <button
+          className="button"
+          onClick={handleAnalyseClick}
           disabled={loading}
-        />
-        <button onClick={handleAnalyseClick} disabled={loading}>
+        >
           {loading ? "Loading..." : "Analyse"}
         </button>
       </div>
-      <div>
-        <h2>Queries:</h2>
-        <ul>
-          {queries.map((query, index) => (
-            <li key={index}>{query}</li>
-          ))}
-        </ul>
+      <div className="queries-comments">
+        <h2>Queries</h2>
+
+        {queries.map((query, index) => (
+          <li key={index}>{query}</li>
+        ))}
       </div>
     </div>
   );
