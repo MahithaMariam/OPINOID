@@ -97,7 +97,7 @@ const Analyser = () => {
       {comments.length > 0 && (
         <div className="comments-container">
           <div>
-            <h3>Positive Comments</h3>
+            <h3>Positive Comments {positiveComments.length}</h3>
             <div className="cmt">
               {positiveComments.length > 0 ? (
                 positiveComments.map((comment, index) => (
@@ -111,7 +111,7 @@ const Analyser = () => {
             </div>
           </div>
           <div>
-            <h3>Negative Comments</h3>
+            <h3>Negative Comments {negativeComments.length}</h3>
           <div className="cmt">
             {negativeComments.length > 0 ? (
               negativeComments.map((comment, index) => (
