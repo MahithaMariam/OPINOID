@@ -1,14 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
-*{
-  font-family: Outfit,sans-serif;
-
+* {
+  font-family: Outfit, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  padding-top: 50px; /* Add padding to accommodate navbar */
-}
-

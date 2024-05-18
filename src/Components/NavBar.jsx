@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import QueryIdentification from "./Queries";
+import { LogIn } from "lucide-react";
+import Analyser from "./Analyser";
+import AboutUs from "./AboutUs";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,18 +46,22 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <button type="button" onClick={scrollToAbout}>About Us</button>
+        <Link to="/about" path={<AboutUs/>}>
+          <button type="button">About Us</button>
+          </Link>
         </li>
         <li>
-          <button type="button" onClick={scrollToAnalyser}>Comment Analysis</button>
+        <Link to="/analyser" path={<Analyser/>}>
+          <button type="button">Comment Analysis</button>
+          </Link>
         </li>
         <li>
-          <Link to="/login" onClick={closeMenu}>
+          <Link to="/login" path={<LogIn/>}>
             <button type="button">Login</button>
           </Link>
         </li>
         <li>
-          <Link to="/queries" onClick={<QueryIdentification/>}>
+          <Link to="/queries" path={<QueryIdentification/>}>
             <button type="button">Queries</button>
           </Link>
         </li>

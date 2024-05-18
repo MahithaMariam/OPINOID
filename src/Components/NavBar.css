@@ -1,15 +1,16 @@
 .navbar {
+    background-color: #b1cce0;
+    height: 7vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #b1cce0;
   }
   
   .title {
     color: rgb(16, 16, 16);
     text-decoration: none;
     font-size: 24px;
+    padding-left: 20px;
   }
   
   .menu {

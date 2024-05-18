@@ -8,10 +8,11 @@ import Navbar from './NavBar'; // Import Navbar component
 import LoginRegister from './LoginRegister'; // Import LoginRegister component
 import QueryIdentification from './Queries';
 import "./App.css"
+
 const App = () => {
   return (
     <Router>
-      <Navbar /> {/* Render Navbar component */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />

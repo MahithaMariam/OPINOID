@@ -3,7 +3,6 @@ import './LoginRegister.css';
 
 import { FaUser, FaLock, FaEnvelope } from 'react-icons/fa';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import backgroundImage from './Awesome Beautiful Anime Scenery Wallpapers - WallpaperAccess.jpeg';
 import { app, auth } from './firebase'; // Correct path to firebase.js
 
 
@@ -44,7 +43,7 @@ const LoginRegister = () => {
     };
 
     return (
-        <div className="container" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        <div className="container">
             <div className="form-container">
                 <div className={`form-box login ${isRegister ? 'hidden' : ''}`}>
                     <form onSubmit={handleLogin}>
