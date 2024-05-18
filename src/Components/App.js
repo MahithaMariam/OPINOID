@@ -6,6 +6,7 @@ import AboutUs from './AboutUs';
 import Analyser from './Analyser';
 import Navbar from './NavBar'; // Import Navbar component
 import LoginRegister from './LoginRegister'; // Import LoginRegister component
+import QueryIdentification from './Queries';
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/analyser" element={<Analyser />} />
+        <Route path="/queries" element={< QueryIdentification/>} />
+
         <Route path="/login" element={<LoginRegister />} /> {/* Add LoginRegister route */}
       </Routes>
     </Router>

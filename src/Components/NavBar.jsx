@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import QueryIdentification from "./Queries";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,6 +51,11 @@ const Navbar = () => {
         <li>
           <Link to="/login" onClick={closeMenu}>
             <button type="button">Login</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/queries" onClick={<QueryIdentification/>}>
+            <button type="button">Queries</button>
           </Link>
         </li>
       </ul>
