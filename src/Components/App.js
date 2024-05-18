@@ -7,7 +7,7 @@ import Analyser from './Analyser';
 import Navbar from './NavBar'; // Import Navbar component
 import LoginRegister from './LoginRegister'; // Import LoginRegister component
 import QueryIdentification from './Queries';
-
+import "./App.css"
 const App = () => {
   return (
     <Router>

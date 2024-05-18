@@ -16,7 +16,6 @@
     padding: 40px;
     color: #860c0cd4; /* Font color */
     text-align: center; /* Center align heading */
-    font-family: 'Your Custom Font', outline; /* Replace 'Your Custom Font' with the name of your custom font */
 }
 
 .about-heading h2 {
@@ -32,5 +31,4 @@
     font-size: 20px; /* Adjust font size as needed */
     line-height: 1.5; 
     color: #16171d;/* Adjust line height as needed */
-    font-family: 'Your Custom Font', sans-serif; /* Replace 'Your Custom Font' with the name of your custom font */
 }
