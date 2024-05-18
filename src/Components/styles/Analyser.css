@@ -7,7 +7,6 @@
     flex-direction: column; /* Align items vertically */
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: rgba(154, 175, 198, 0); /* Adjust the alpha value (0.5) for transparency */
     background-size: cover;
 }
@@ -18,6 +17,7 @@
     flex-direction: column; /* Align items vertically */
     background-color: rgba(235, 235, 235, 0.077); /* Semi-transparent white background for form */
     padding: 20px;
+    margin: 20px;
     border-radius: 10px;
 }
 

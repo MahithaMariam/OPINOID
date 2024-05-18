@@ -64,8 +64,8 @@ const Analyser = () => {
     };
 
     return (
-        <div>
-            <div className="analyser-container">
+        <div className="analyser-container">
+            <div >
                 <div className="form-container">
                     <div className="field">
                         <label className="label">Please enter your YouTube URL here:</label>
