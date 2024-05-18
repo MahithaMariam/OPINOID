@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./NavBar.css";
+import "./styles/NavBar.css";
 import QueryIdentification from "./Queries";
 import { LogIn } from "lucide-react";
 import Analyser from "./Analyser";
