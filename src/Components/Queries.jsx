@@ -19,7 +19,7 @@ const QueryIdentification = () => {
 
       do {
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=AIzaSyAWltV2rXkXuy7zbjymBioVXks9zKaR82w${
+          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}${
             nextPageToken ? `&pageToken=${nextPageToken}` : ""
           }`
         );

@@ -5,6 +5,7 @@ import "./styles/Analyser.css";
 
 
 const Analyser = () => {
+
   const [url, setUrl] = useState("");
   const [comments, setComments] = useState([]);
   const [sentimentResult, setSentimentResult] = useState("");
@@ -23,7 +24,7 @@ const Analyser = () => {
 
       do {
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${process.env.YT_KEY}${
+          `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}${
             nextPageToken ? `&pageToken=${nextPageToken}` : ""
           }`
         );
