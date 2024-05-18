@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './styles/Home.css';
 import aboutImage from './iq.png'; // Ensure the correct path to the image
 import Footer from './Footer';
-
+import chat_img  from './chat-icon.png'
 const Home = () => {
     const [url, setUrl] = useState("");
     const aboutRef = useRef(null);
@@ -35,7 +35,7 @@ const Home = () => {
                     </div>
                     <div className='home-img'>
 
-                        <img src="https://img.freepik.com/free-vector/vector-icon-set-chat-bubble-white-blue-message-texting_134830-1235.jpg?t=st=1712726191~exp=1712729791~hmac=6a2aebe2ee8c65a2a423567b9ff65069b01deb23e95b9d67e12ffd4ca91551b0&w=1060" alt="" />
+                        <img src={chat_img} alt="chat_img" />
                     </div>
                 </div>
             </div>
