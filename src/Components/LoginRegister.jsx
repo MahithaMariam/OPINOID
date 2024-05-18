@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './styles/LoginRegister.css';
-
 import { FaUser, FaLock, FaEnvelope } from 'react-icons/fa';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { app, auth } from './firebase'; // Correct path to firebase.js
-
+import { app, auth } from './firebase'; // Ensure the path to firebase.js is correct
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const LoginRegister = () => {
     const [isRegister, setIsRegister] = useState(false);
@@ -13,6 +12,7 @@ const LoginRegister = () => {
     const [username, setUsername] = useState('');
 
     const authInstance = getAuth(app);
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const showRegisterForm = () => {
         setIsRegister(true);
@@ -27,6 +27,7 @@ const LoginRegister = () => {
         try {
             await signInWithEmailAndPassword(authInstance, email, password);
             alert('Login successful');
+            navigate('/'); // Navigate to the homepage
         } catch (error) {
             alert('Error logging in: ' + error.message);
         }
@@ -37,6 +38,7 @@ const LoginRegister = () => {
         try {
             await createUserWithEmailAndPassword(authInstance, email, password);
             alert('Registration successful');
+            navigate('/'); // Optionally navigate to the homepage or login page after registration
         } catch (error) {
             alert('Error registering: ' + error.message);
         }
