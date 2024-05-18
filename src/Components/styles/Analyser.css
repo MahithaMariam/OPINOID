@@ -45,31 +45,22 @@
 
 .button {
     background-color: #23292ec2;
-    /* Blue button color */
     color: #dee0f8;
-    /* White text color */
     padding: 5px;
-    /* Keep the padding consistent */
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 20px;
-    /* Keep the font size consistent */
     width: 50%;
-    /* Adjust the width of the button to be half the width of the input box */
     margin-top: 10px;
-    /* Add some space between the input box and the button */
     align-self: center;
-    /* Center button horizontally */
 }
 
 
 
 .button:hover {
     background-color: #3783d5;
-    /* Darker blue color on hover */
     padding: 8px;
-    /* Adjust the padding to reduce the hover effect length */
 }
 
 .comments-container {
@@ -77,6 +68,7 @@
     gap: 20px;
     max-height: calc(90vh - 200px);
     justify-content: space-between;
+    
 }
 
 
@@ -88,11 +80,10 @@
    
 }
 .cmt{
-    max-height: calc(90vh - 290px);
+    max-height: calc(92vh - 300px);
     overflow: auto;
     width: 50vw;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
