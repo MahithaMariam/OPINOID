@@ -1,9 +1,9 @@
 // eslint-disable-next-line
 import React, { useState, useRef, useEffect } from 'react';
 import './styles/Home.css';
-import aboutImage from './iq.png'; // Ensure the correct path to the image
+import aboutImage from './images/iq.png'; // Ensure the correct path to the image
 import Footer from './Footer';
-import chat_img  from './chat-icon.png'
+import chat_img  from './images/chat-icon.png'
 const Home = () => {
     const [url, setUrl] = useState("");
     const aboutRef = useRef(null);

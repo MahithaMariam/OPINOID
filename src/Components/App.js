@@ -8,6 +8,7 @@ import Navbar from './NavBar'; // Import Navbar component
 import LoginRegister from './LoginRegister'; // Import LoginRegister component
 import QueryIdentification from './Queries';
 import "./App.css"
+import ProtectedRoute from './utils/ProtectedRoute';
 
 const App = () => {
   return (
@@ -16,9 +17,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/analyser" element={<Analyser />} />
-        <Route path="/queries" element={< QueryIdentification/>} />
-
+        <Route path="/analyser" element={<ProtectedRoute><Analyser /></ProtectedRoute>} />
+        <Route path="/queries" element={<ProtectedRoute>< QueryIdentification/></ProtectedRoute>} />
         <Route path="/login" element={<LoginRegister />} /> {/* Add LoginRegister route */}
       </Routes>
     </Router>

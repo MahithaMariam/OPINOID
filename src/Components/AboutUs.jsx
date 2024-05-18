@@ -1,7 +1,7 @@
 // AboutUs.jsx
 import React from 'react';
 import './styles/AboutUs.css';
-import aboutImage from './iq.png'; // Import the image here
+import aboutImage from './images/iq.png'; // Import the image here
 
 
 const AboutUs = () => {

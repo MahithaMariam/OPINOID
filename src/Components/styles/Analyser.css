@@ -2,7 +2,7 @@
 
 /* Background Image: This is the background image for the analyser container */
 .analyser-container {
-    background-image: url("../im1.png");
+    background-image: url("../images/im1.png");
     display: flex;
     flex-direction: column;
     justify-content: center;
