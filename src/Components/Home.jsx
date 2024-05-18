@@ -68,7 +68,7 @@ const Home = () => {
                     <button className="button" onClick={handleAnalyseClick}>Analyse</button>
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };
