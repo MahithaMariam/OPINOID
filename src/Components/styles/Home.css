@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     height: 90vh;
-    background-color: rgba(192, 223, 255, 0.907); /* Adjust the alpha value (0.5) as needed */
+    background-color: #FFFAFF; /* Adjust the alpha value (0.5) as needed */
     /*background-image: url("../image.png"); /* Set the background image here */
     background-size: cover; /* Adjust background size as needed */
     background-position: flex; /* Adjust background position as needed */
@@ -18,16 +18,23 @@
     display: flex;
     width: 80%;
 }
-
+.home-img{
+    z-index: 2000;
+}
+.home-img img{
+    width: 500px;
+    mix-blend-mode:  color-burn;
+}
 .heading {
     flex: 1;
-    padding: 80px;
-    color: #131313;
+    padding-top: 80px;
+    color: #0A2463;
     background-color: #ebebeb00;
 }
 
 .heading h2 {
-    font-size: 75px;
+    width: 700px;   
+    font-size:55px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold; /* Added bold font */
 }

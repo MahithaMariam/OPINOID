@@ -27,15 +27,19 @@ const Home = () => {
 
     return (
         <div className="page">
-            <div id="home" className="home-container w-full"> 
+            <div id="home" className="home-container w-full">
                 <div className="home-content">
                     <div className="heading">
-                        <h2>Welcome to OPINOID.......</h2>
+                        <h2>Welcome to OPINOID</h2>
                         <p>Streamline Your Comments, Amplify Your Impact!</p>
+                    </div>
+                    <div className='home-img'>
+
+                        <img src="https://img.freepik.com/free-vector/vector-icon-set-chat-bubble-white-blue-message-texting_134830-1235.jpg?t=st=1712726191~exp=1712729791~hmac=6a2aebe2ee8c65a2a423567b9ff65069b01deb23e95b9d67e12ffd4ca91551b0&w=1060" alt="" />
                     </div>
                 </div>
             </div>
-            <div ref={aboutRef} className="about-container" id="about-container"> 
+            <div ref={aboutRef} className="about-container" id="about-container">
                 <div className="about-content">
                     <div className="about-image">
                         <img src={aboutImage} alt="About Us" /> {/* Ensure the correct path to the image */}
@@ -64,7 +68,7 @@ const Home = () => {
                     <button className="button" onClick={handleAnalyseClick}>Analyse</button>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };
