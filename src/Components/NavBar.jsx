@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./styles/NavBar.css";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "./firebase"; // Make sure the path is correct
-import "./NavBar.css";
 import QueryIdentification from "./Queries";
 import { LogIn } from "lucide-react";
 import Analyser from "./Analyser";
